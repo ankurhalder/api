@@ -1,0 +1,28 @@
+.sidebar {
+  padding: 2rem;
+  border-right: 1px solid var(--border);
+  background-color: var(--background);
+  height: 100%;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin-bottom: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--foreground);
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    color: var(--primary);
+  }
+}

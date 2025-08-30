@@ -1,0 +1,18 @@
+.header {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}

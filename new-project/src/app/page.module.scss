@@ -1,0 +1,42 @@
+.page {
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .version,
+  .generatedDate {
+    font-size: 0.875rem;
+    color: var(--foreground);
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+  }
+
+  .section {
+    margin: 3rem 0;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    code {
+      background-color: var(--background);
+      opacity: 0.9;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-family: var(--font-mono);
+    }
+  }
+}

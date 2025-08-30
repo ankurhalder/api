@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ankur Halder's Portfolio API Documentation
+
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+A web application to display and document the API for Ankur Halder's portfolio.
+
+## Table of Contents
+
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
+
+## About The Project
+
+This project is a frontend application designed to showcase the API documentation for Ankur Halder's portfolio backend. It provides a clean, readable, and easy-to-navigate interface for developers to understand and interact with the various API endpoints.
+
+The application is built with Next.js and is designed to be easily deployable and maintainable.
+
+### Built With
+
+This project is built with the following technologies:
+
+* [Next.js](https://nextjs.org/)
+* [React](https://reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Sass](https://sass-lang.com/)
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running follow these simple example steps.
 
-```bash
+### Prerequisites
+
+You will need to have Node.js and npm installed on your machine.
+
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Fork the Project
+2. Clone your forked repository
+   ```sh
+   git clone https://github.com/your_username/ankurhalder-portfolio.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+## Usage
+
+To run the application in a development environment, use the following command:
+
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server at `http://localhost:3000`. Open this URL in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To build the application for production, use:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npm run build
+```
 
-## Learn More
+And to start the production server:
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Deploy on Vercel
+Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Ankur Halder - [@your_twitter](https://twitter.com/your_twitter) - ankur.halder@example.com
+
+Project Link: [https://github.com/ankurhalder/portfolio-api-docs](https://github.com/ankurhalder/portfolio-api-docs)
+
+## Acknowledgments
+
+* [Vercel](https://vercel.com/)
+* [Next.js](https://nextjs.org/)
+* [Contributor Covenant](https://www.contributor-covenant.org/)
+* [Img Shields](https://shields.io)
+
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/ankurhalder/portfolio-api-docs/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/ankurhalder

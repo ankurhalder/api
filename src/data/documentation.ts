@@ -609,7 +609,7 @@ export const documentationData: DocumentationData = {
             {
                 id: '3-admin-project-skill-endpoints',
                 title: 'Admin Project & Skill Endpoints',
-                url: '',
+                url: '/portfolio/projects | /portfolio/skills',
                 method: 'POST',
                 authentication: 'Required (Admin JWT).',
                 description: 'The following endpoints are for administrative purposes and require an admin-level JWT for authentication.\n\n-   `POST /portfolio/projects`: Create a new project.\n-   `PATCH /portfolio/projects/:id`: Update a project.\n-   `DELETE /portfolio/projects/:id`: Delete a project.\n-   `POST /portfolio/skills`: Create a new skill.\n-   `PATCH /portfolio/skills/:id`: Update a skill.\n-   `DELETE /portfolio/skills/:id`: Delete a skill.',
@@ -719,23 +719,27 @@ export const documentationData: DocumentationData = {
                 useCases: [
                     {
                         useCaseId: 'portfolio-insights',
+                        description: 'Generates a high-level analysis of the entire portfolio, combining information about projects and skills.',
                         caching: 'This use case is heavily cached (24 hours).',
                         payload: []
                     },
                     {
                         useCaseId: 'github-readme',
+                        description: "Generates a draft for a GitHub profile README file based on the user's portfolio and GitHub profile.",
                         payload: [
                             { field: 'githubUsername', type: 'String', description: "The user's GitHub username." }
                         ]
                     },
                     {
                         useCaseId: 'project-changelog',
+                        description: 'Generates a changelog for a project by analyzing the commit history between the two most recent git tags.',
                         payload: [
                             { field: 'repo', type: 'String', description: 'The repository path in the format `owner/repository`.' }
                         ]
                     },
                     {
                         useCaseId: 'skill-synergy',
+                        description: 'Analyzes a list of skills and explains how they work together in a project.',
                         payload: [
                             { field: 'skills', type: 'String[]', description: 'An array of skill titles to analyze.' }
                         ]

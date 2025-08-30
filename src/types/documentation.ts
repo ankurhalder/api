@@ -64,7 +64,7 @@ export interface Endpoint {
   responseFormat?: string;
   rateLimiting?: string;
   generalRequestBody?: { field: string, type: string, required: boolean, description: string }[];
-  useCases?: { useCaseId: string, payload: { field: string, type: string, description: string }[], caching?: string }[];
+  useCases?: { useCaseId: string, description?: string, payload: { field: string, type: string, description: string }[], caching?: string }[];
   checks?: { database: { status: string }, cache: { status: string }, ai_gateway: { status: string, details: string } };
 }
 

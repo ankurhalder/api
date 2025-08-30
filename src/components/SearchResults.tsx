@@ -4,7 +4,11 @@ import { useSearch } from '@/context/SearchContext';
 import styles from './SearchResults.module.scss';
 
 export default function SearchResults() {
-  const { searchResults, searchQuery } = useSearch();
+  const { searchResults, searchQuery, setSearchQuery } = useSearch();
+
+  const handleResultClick = () => {
+    setSearchQuery('');
+  };
 
   if (!searchQuery) {
     return null;
@@ -20,7 +24,7 @@ export default function SearchResults() {
       <ul>
         {searchResults.map((result, index) => (
           <li key={index}>
-            <a href={result.url}>
+            <a href={result.url} onClick={handleResultClick}>
               <div className={styles.breadcrumbs}>
                 {result.breadcrumbs.join(' > ')}
               </div>

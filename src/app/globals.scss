@@ -88,12 +88,3 @@ body {
 
   --border: #27272a;
 }
-
-// Style for the tutorial highlight effect
-.highlighted {
-  box-shadow: 0 0 0 2px var(--primary), 0 0 0 4px var(--primary-foreground);
-  border-radius: 0.25rem;
-  position: relative;
-  z-index: 999;
-  transition: box-shadow 0.3s ease-in-out;
-}

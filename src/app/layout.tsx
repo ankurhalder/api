@@ -5,9 +5,6 @@ import Sidebar from "@/components/Sidebar";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { SearchProvider } from "@/context/SearchContext";
 import { FilterProvider } from "@/context/FilterContext";
-import { ProgressProvider } from "@/context/ProgressContext";
-import { TutorialProvider } from "@/context/TutorialContext";
-import TutorialPlayer from "@/components/TutorialPlayer";
 import "./globals.scss";
 import styles from "./Layout.module.scss";
 
@@ -38,16 +35,11 @@ export default function RootLayout({
         <ThemeProvider>
           <SearchProvider>
             <FilterProvider>
-              <ProgressProvider>
-                <TutorialProvider>
-                  <div className={styles.layout}>
-                    <Header />
-                    <Sidebar />
-                    <main className={styles.mainContent}>{children}</main>
-                  </div>
-                  <TutorialPlayer />
-                </TutorialProvider>
-              </ProgressProvider>
+              <div className={styles.layout}>
+                <Header />
+                <Sidebar />
+                <main className={styles.mainContent}>{children}</main>
+              </div>
             </FilterProvider>
           </SearchProvider>
         </ThemeProvider>

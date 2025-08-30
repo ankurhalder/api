@@ -2,21 +2,16 @@
 
 import { documentationData } from '@/data/documentation';
 import { useFilters } from '@/context/FilterContext';
-import { useProgress } from '@/context/ProgressContext';
 import FilterControls from './FilterControls';
-import ProgressBar from './ProgressBar';
-import { CheckCircle2 } from 'lucide-react';
 import styles from './Sidebar.module.scss';
 
 export default function Sidebar() {
   const { apiSections } = documentationData;
   const { filters } = useFilters();
-  const { isComplete } = useProgress();
 
   return (
     <aside className={styles.sidebar}>
       <nav className={styles.nav}>
-        <ProgressBar />
         <FilterControls />
         <ul>
           <li>
@@ -37,11 +32,8 @@ export default function Sidebar() {
                 {filteredEndpoints.length > 0 && (
                   <ul className={styles.subnav}>
                     {filteredEndpoints.map((endpoint) => (
-                      <li key={endpoint.id} className={styles.subnavItem}>
+                      <li key={endpoint.id}>
                         <a href={`#${endpoint.id}`}>{endpoint.title}</a>
-                        {isComplete(endpoint.id) && (
-                          <CheckCircle2 size={16} className={styles.checkIcon} />
-                        )}
                       </li>
                     ))}
                   </ul>

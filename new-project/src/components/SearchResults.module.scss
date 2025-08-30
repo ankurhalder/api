@@ -1,0 +1,42 @@
+.searchResults {
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--background);
+      opacity: 0.9;
+    }
+
+    a {
+      display: block;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .breadcrumbs {
+    font-size: 0.875rem;
+    color: var(--foreground);
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}

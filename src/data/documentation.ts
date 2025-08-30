@@ -609,7 +609,7 @@ export const documentationData: DocumentationData = {
             {
                 id: '3-admin-project-skill-endpoints',
                 title: 'Admin Project & Skill Endpoints',
-                url: '/portfolio/projects | /portfolio/skills',
+                url: '',
                 method: 'POST',
                 authentication: 'Required (Admin JWT).',
                 description: 'The following endpoints are for administrative purposes and require an admin-level JWT for authentication.\n\n-   `POST /portfolio/projects`: Create a new project.\n-   `PATCH /portfolio/projects/:id`: Update a project.\n-   `DELETE /portfolio/projects/:id`: Delete a project.\n-   `POST /portfolio/skills`: Create a new skill.\n-   `PATCH /portfolio/skills/:id`: Update a skill.\n-   `DELETE /portfolio/skills/:id`: Delete a skill.',
@@ -719,27 +719,23 @@ export const documentationData: DocumentationData = {
                 useCases: [
                     {
                         useCaseId: 'portfolio-insights',
-                        description: 'Generates a high-level analysis of the entire portfolio, combining information about projects and skills.',
                         caching: 'This use case is heavily cached (24 hours).',
                         payload: []
                     },
                     {
                         useCaseId: 'github-readme',
-                        description: "Generates a draft for a GitHub profile README file based on the user's portfolio and GitHub profile.",
                         payload: [
                             { field: 'githubUsername', type: 'String', description: "The user's GitHub username." }
                         ]
                     },
                     {
                         useCaseId: 'project-changelog',
-                        description: 'Generates a changelog for a project by analyzing the commit history between the two most recent git tags.',
                         payload: [
                             { field: 'repo', type: 'String', description: 'The repository path in the format `owner/repository`.' }
                         ]
                     },
                     {
                         useCaseId: 'skill-synergy',
-                        description: 'Analyzes a list of skills and explains how they work together in a project.',
                         payload: [
                             { field: 'skills', type: 'String[]', description: 'An array of skill titles to analyze.' }
                         ]
@@ -818,5 +814,61 @@ export const documentationData: DocumentationData = {
             }
         ]
     }
+  ],
+  tutorials: [
+    {
+      id: 'tut-01',
+      title: 'Your First API Call',
+      description: 'Learn how to make your first API call by signing up a new user.',
+      steps: [
+        {
+          title: 'Welcome to the Tutorial!',
+          description: "This tutorial will guide you through signing up a new user. Click 'Next' to begin.",
+          targetId: 'authentication-api',
+        },
+        {
+          title: 'The User Signup Endpoint',
+          description: "This is the endpoint for creating a new user. It's a POST request and doesn't require authentication.",
+          targetId: '1-user-signup',
+        },
+        {
+          title: 'Try It Yourself',
+          description: "Now, let's try making a request. Fill in the fields in the 'Try It Out' console. When you're ready, click 'Send Request'.",
+          targetId: '1-user-signup',
+        },
+        {
+          title: 'Congratulations!',
+          description: "You've made your first API call! You can now explore the rest of the documentation.",
+          targetId: 'welcome',
+        },
+      ],
+    },
+    {
+      id: 'tut-02',
+      title: 'Updating Your Profile',
+      description: 'A step-by-step guide to updating a user\'s name and email.',
+      steps: [
+        {
+          title: 'Find the "Update My Profile" endpoint',
+          description: "First, let's find the endpoint for updating a user profile. It's in the User Management API section.",
+          targetId: '2-update-my-profile',
+        },
+        {
+          title: 'Check the Request Body',
+          description: "This is a PATCH request. Notice that the request body takes 'name' and 'email'. You don't have to provide both.",
+          targetId: '2-update-my-profile',
+        },
+        {
+          title: 'Try It Out',
+          description: "Use the 'Try It Out' console to send a test request. Try changing just the name. A successful request will return the updated user object.",
+          targetId: '2-update-my-profile',
+        },
+        {
+          title: 'Tutorial Complete!',
+          description: "Great job! You now know how to update user profiles.",
+          targetId: 'tutorials',
+        },
+      ],
+    },
   ],
 };

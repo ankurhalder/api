@@ -4,6 +4,10 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { SearchProvider } from "@/context/SearchContext";
+import { FilterProvider } from "@/context/FilterContext";
+import { ProgressProvider } from "@/context/ProgressContext";
+import { TutorialProvider } from "@/context/TutorialContext";
+import TutorialPlayer from "@/components/TutorialPlayer";
 import "./globals.scss";
 import styles from "./Layout.module.scss";
 
@@ -33,11 +37,18 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
           <SearchProvider>
-            <div className={styles.layout}>
-              <Header />
-              <Sidebar />
-              <main className={styles.mainContent}>{children}</main>
-            </div>
+            <FilterProvider>
+              <ProgressProvider>
+                <TutorialProvider>
+                  <div className={styles.layout}>
+                    <Header />
+                    <Sidebar />
+                    <main className={styles.mainContent}>{children}</main>
+                  </div>
+                  <TutorialPlayer />
+                </TutorialProvider>
+              </ProgressProvider>
+            </FilterProvider>
           </SearchProvider>
         </ThemeProvider>
       </body>

@@ -5,7 +5,6 @@ import { Endpoint as EndpointType } from '@/types/documentation';
 import CodeBlock from './CodeBlock';
 import Highlighter from './Highlighter';
 import CodeSnippetGenerator from './CodeSnippetGenerator';
-import TryItOut from './TryItOut';
 import styles from './Endpoint.module.scss';
 
 interface EndpointProps {
@@ -31,8 +30,6 @@ export default function Endpoint({ endpoint }: EndpointProps) {
           <Highlighter text={endpoint.description} highlight={searchQuery} />
         </p>
       )}
-
-      <TryItOut endpoint={endpoint} />
 
       {endpoint.requestBody && (
         <>

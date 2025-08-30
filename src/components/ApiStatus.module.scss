@@ -1,0 +1,51 @@
+.apiStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: var(--color-background-muted);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  cursor: help;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-text-muted);
+
+  &.loading {
+    background-color: #f39c12; // Orange for loading
+    animation: pulse 1.5s infinite;
+  }
+
+  &.ok {
+    background-color: #2ecc71; // Green for OK
+  }
+
+  &.degraded {
+    background-color: #f1c40f; // Yellow for degraded
+  }
+
+  &.error {
+    background-color: #e74c3c; // Red for error
+  }
+}
+
+.text {
+  font-weight: 500;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}

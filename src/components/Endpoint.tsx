@@ -1,5 +1,11 @@
+'use client';
+
+import { useSearch } from '@/context/SearchContext';
 import { Endpoint as EndpointType } from '@/types/documentation';
 import CodeBlock from './CodeBlock';
+import Highlighter from './Highlighter';
+import CodeSnippetGenerator from './CodeSnippetGenerator';
+import TryItOut from './TryItOut';
 import styles from './Endpoint.module.scss';
 
 interface EndpointProps {
@@ -7,14 +13,26 @@ interface EndpointProps {
 }
 
 export default function Endpoint({ endpoint }: EndpointProps) {
+  const { searchQuery } = useSearch();
+
   return (
     <div className={styles.endpoint} id={endpoint.id}>
-      <h3 className={styles.title}>{endpoint.title}</h3>
+      <h3 className={styles.title}>
+        <Highlighter text={endpoint.title} highlight={searchQuery} />
+      </h3>
       <div className={styles.url}>
         <span className={`${styles.method} ${styles[endpoint.method.toLowerCase()]}`}>{endpoint.method}</span>
-        <code>{endpoint.url}</code>
+        <code>
+          <Highlighter text={endpoint.url} highlight={searchQuery} />
+        </code>
       </div>
-      {endpoint.description && <p>{endpoint.description}</p>}
+      {endpoint.description && (
+        <p>
+          <Highlighter text={endpoint.description} highlight={searchQuery} />
+        </p>
+      )}
+
+      <TryItOut endpoint={endpoint} />
 
       {endpoint.requestBody && (
         <>
@@ -42,12 +60,10 @@ export default function Endpoint({ endpoint }: EndpointProps) {
         </>
       )}
 
-      {endpoint.sampleRequests && endpoint.sampleRequests.map((req, index) => (
-        <div key={index}>
-          <h4 className={styles.subheading}>Sample Request ({req.language})</h4>
-          <CodeBlock language={req.language} code={req.code} />
-        </div>
-      ))}
+      <div>
+        <h4 className={styles.subheading}>Sample Request</h4>
+        <CodeSnippetGenerator endpoint={endpoint} />
+      </div>
 
       {endpoint.sampleSuccessResponse && (
         <div>

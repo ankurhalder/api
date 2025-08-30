@@ -54,6 +54,16 @@ export interface Endpoint {
   sampleRequests?: SampleRequest[];
   sampleSuccessResponse?: SampleResponse;
   sampleErrorResponses?: SampleResponse[];
+  mockResponse?: {
+    success: {
+      statusCode: number;
+      body: Record<string, unknown>;
+    };
+    error: {
+      statusCode: number;
+      body: Record<string, unknown>;
+    };
+  };
   description?: string;
   headers?: { header: string; type: string; description: string }[];
   status?: string;
@@ -75,6 +85,19 @@ export interface ApiSection {
   endpoints: Endpoint[];
 }
 
+export interface TutorialStep {
+  title: string;
+  description: string;
+  targetId: string; // The HTML id of the element to highlight
+}
+
+export interface Tutorial {
+  id: string;
+  title:string;
+  description: string;
+  steps: TutorialStep[];
+}
+
 export interface DocumentationData {
   title: string;
   version: string;
@@ -83,4 +106,5 @@ export interface DocumentationData {
   welcomeMessage: string;
   gettingStarted: GettingStartedInfo;
   apiSections: ApiSection[];
+  tutorials?: Tutorial[];
 }

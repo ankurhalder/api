@@ -1,0 +1,44 @@
+.snippetGenerator {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tabs {
+  display: flex;
+  background-color: var(--background-muted);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 0.5rem 0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.tab {
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+
+  &.active {
+    color: var(--color-text);
+    border-bottom: 2px solid var(--primary);
+  }
+
+  &:hover:not(.active) {
+    color: var(--color-text);
+  }
+}
+
+.content {
+  // The CodeBlock component has its own styling,
+  // but we might want to ensure it fits well.
+  > div {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin: 0;
+  }
+}
